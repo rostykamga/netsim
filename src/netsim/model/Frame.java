@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author Rostand
  */
-public class Frame extends NetworkEvent{
+public class Frame{
     
     private int sender;
     private int destination;
@@ -29,13 +29,13 @@ public class Frame extends NetworkEvent{
     /**
      * Create a frame and set its sender and destinator
      * @param sender
-     * @param destinator 
+     * @param dest 
      * @param _timeSlot 
      */
-    public Frame(int sender, int destinator, TimeSlot _timeSlot) {
+    public Frame(int sender, int dest, TimeSlot _timeSlot) {
         this(_timeSlot);
         this.sender = sender;
-        this.destination = destinator;
+        this.destination = dest;
     }
 
     public int getSender() {
@@ -64,7 +64,7 @@ public class Frame extends NetworkEvent{
         int hash = 7;
         hash = 97 * hash + this.sender;
         hash = 97 * hash + this.destination;
-        hash = 97 * hash + Objects.hashCode(this.timestamp);
+        hash = 97 * hash + Objects.hashCode(this.timeSlot);
         return hash;
     }
 
@@ -86,7 +86,7 @@ public class Frame extends NetworkEvent{
         if (this.destination != other.destination) {
             return false;
         }
-        if (!Objects.equals(this.timestamp, other.timestamp)) {
+        if (!Objects.equals(this.timeSlot, other.timeSlot)) {
             return false;
         }
         return true;
@@ -94,7 +94,7 @@ public class Frame extends NetworkEvent{
 
     @Override
     public String toString() {
-        return "Frame{" + "sender=" + sender + ", destinator=" + destination + ", timestamp=" + timestamp + '}';
+        return "Frame{" + "sender=" + sender + ", destinator=" + destination + ", timeSlot=" + timeSlot + '}';
     }
     
 }

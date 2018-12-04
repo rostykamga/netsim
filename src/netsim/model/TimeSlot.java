@@ -9,9 +9,9 @@ import java.util.concurrent.atomic.AtomicLong;
 
 /**
  *
- * @author Rostand
+ * @author Turki
  */
-public class TimeSlot extends NetworkEvent{
+public class TimeSlot{
     
     
     private static final AtomicLong TS_COUNT= new AtomicLong(1);
@@ -34,6 +34,6 @@ public class TimeSlot extends NetworkEvent{
     
     @Override
     public String toString() {
-        return "TimeSlot{" + "timestamp="+ timestamp+ '}';
+        return "TimeSlot{" + "timeSlotValue="+ timeSlotValue+ '}';
     }
 }
