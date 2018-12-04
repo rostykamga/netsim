@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="mainFxmlClass" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="netsim.controller.SimulationController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+          <AnchorPane fx:id="simulationSettingsPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="250.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+                     <children>
+                        <Label styleClass="label-title" text="Settings" />
+                        <GridPane gridLinesVisible="true">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Slot Duration (ms)">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Stations" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Frame Probability" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Frame Size (slots)" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Max Interval" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Max Retransmission" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txtSlotDuration" GridPane.columnIndex="1" />
+                              <TextField fx:id="txtFrameProbability" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtStations" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtFrameSize" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtMaxInterval" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="txtMaxRetrans" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                        <Label styleClass="label-title" text="Runtime" />
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Ellapsed Time" />
+                              <Label text="Frame Generated" GridPane.rowIndex="1" />
+                              <Label text="Avg Frame Generated" GridPane.rowIndex="2" />
+                              <Label text="Frame Transmitted" GridPane.rowIndex="3" />
+                              <Label text="Frame Lost" GridPane.rowIndex="4" />
+                              <Label text="Frame Awaiting" GridPane.rowIndex="5" />
+                              <Label text="Channel Use" GridPane.rowIndex="6" />
+                              <Label text="Channel Waste/Idle" GridPane.rowIndex="7" />
+                              <Label text="Channel Waste/Collision" GridPane.rowIndex="8" />
+                              <Label text="Throughput" GridPane.rowIndex="9" />
+                              <Label fx:id="labEllapsed" styleClass="label-result" text="Label" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="labFrameGenerated" styleClass="label-result" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="labAvgFrame" styleClass="label-result" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="labFrameTransmitted" styleClass="label-result" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="labFrameLost" styleClass="label-result" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="labFrameAwt" styleClass="label-result" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="labChannelUse" styleClass="label-result" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="labChannelWasteIdle" styleClass="label-result" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="labChannelWasteCollision" styleClass="label-result" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="labThroughput" styleClass="label-result" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Retransmission Overhead" GridPane.rowIndex="10" />
+                              <Label fx:id="labRetransmissionOverhead" styleClass="label-result" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Delay:" GridPane.rowIndex="11" />
+                              <Label fx:id="labDelay" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <Pane VBox.vgrow="ALWAYS" />
+                        <ButtonBar buttonMinWidth="50.0" VBox.vgrow="NEVER">
+                          <buttons>
+                            <Button fx:id="btnPlay" defaultButton="true" maxWidth="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleBtnPlay" prefHeight="25.0" prefWidth="40.0" text="Play" />
+                              <Button fx:id="btnStop" cancelButton="true" maxWidth="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleBtnStop" prefWidth="40.0" text="Stop" />
+                          </buttons>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </ButtonBar>
+                     </children>
+                  </VBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="10.0" right="5.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </left>
+         <center>
+          <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+               <children>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab text="Network">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <Pane fx:id="workPane" prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Charts">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <VBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#handleExportPDFBtn" text="Export to PDF">
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <LineChart fx:id="framesChart" maxWidth="1.7976931348623157E308" prefHeight="450.0" title="Frames">
+                                                  <xAxis>
+                                                    <CategoryAxis label="Time Slots" side="BOTTOM" />
+                                                  </xAxis>
+                                                  <yAxis>
+                                                    <NumberAxis side="LEFT" />
+                                                  </yAxis>
+                                                </LineChart>
+                                                <LineChart fx:id="avgFrameChart" maxWidth="1.7976931348623157E308" prefHeight="450.0" title="Average Frame Generated Per Time Slot">
+                                                  <xAxis>
+                                                    <CategoryAxis label="Time Slots" side="BOTTOM" />
+                                                  </xAxis>
+                                                  <yAxis>
+                                                    <NumberAxis side="LEFT" />
+                                                  </yAxis>
+                                                </LineChart>
+                                                <LineChart fx:id="channelChart" maxWidth="1.7976931348623157E308" prefHeight="450.0" title="Channel">
+                                                  <xAxis>
+                                                    <CategoryAxis label="Time Slots" side="BOTTOM" />
+                                                  </xAxis>
+                                                  <yAxis>
+                                                    <NumberAxis side="LEFT" />
+                                                  </yAxis>
+                                                </LineChart>
+                                                <LineChart fx:id="throughputChart" maxWidth="1.7976931348623157E308" prefHeight="450.0" title="Throughput">
+                                                  <xAxis>
+                                                    <CategoryAxis label="Time Slots" side="BOTTOM" />
+                                                  </xAxis>
+                                                  <yAxis>
+                                                    <NumberAxis side="LEFT" />
+                                                  </yAxis>
+                                                </LineChart>
+                                                <LineChart fx:id="retransmissionChart" prefHeight="450.0" title="Retransmissions">
+                                                  <xAxis>
+                                                    <CategoryAxis side="BOTTOM" />
+                                                  </xAxis>
+                                                  <yAxis>
+                                                    <NumberAxis side="LEFT" />
+                                                  </yAxis>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </LineChart>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </center>
+         <right>
+          <AnchorPane fx:id="devicePropertiesPane" minWidth="250.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TitledPane animated="false" collapsible="false" text="Stations Stats" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <Accordion fx:id="accordion" prefWidth="150.0" />
+                     </content>
+                  </TitledPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </right>
+         <bottom>
+            <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="730.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Legend:">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Transmitting:">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Line fx:id="legendTransmitting" endX="50.0" strokeLineCap="BUTT" strokeWidth="2.0">
+                     <HBox.margin>
+                        <Insets left="5.0" right="30.0" />
+                     </HBox.margin>
+                  </Line>
+                  <Label text="Idle:" />
+                  <Line fx:id="legendIdle" endX="50.0" layoutX="73.0" layoutY="37.0" strokeLineCap="BUTT" strokeWidth="2.0">
+                     <HBox.margin>
+                        <Insets left="5.0" right="30.0" />
+                     </HBox.margin>
+                  </Line>
+                  <Label text="Awaiting:" />
+                  <Line fx:id="legendAwaiting" endX="50.0" layoutX="124.0" layoutY="37.0" strokeLineCap="BUTT" strokeWidth="2.0">
+                     <HBox.margin>
+                        <Insets left="5.0" right="30.0" />
+                     </HBox.margin>
+                  </Line>
+                  <Label text="Collision:" />
+                  <Line fx:id="legendCollision" endX="50.0" layoutX="175.0" layoutY="37.0" strokeLineCap="BUTT" strokeWidth="2.0">
+                     <HBox.margin>
+                        <Insets left="5.0" right="30.0" />
+                     </HBox.margin>
+                  </Line>
+               </children>
+            </HBox>
+         </bottom>
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Simulation">
+                  <items>
+                        <MenuItem fx:id="menuNewSimulation" mnemonicParsing="false" onAction="#handleNewSimulationMenu" text="New" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem fx:id="menuQuitApp" mnemonicParsing="false" onAction="#handleExitMenu" text="Quit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="View">
+                  <items>
+                        <CheckMenuItem fx:id="menuShowDevProperties" mnemonicParsing="false" selected="true" text="Device Properties" />
+                        <CheckMenuItem fx:id="menuShowSimulationSettings" mnemonicParsing="false" selected="true" text="Simulation Settings" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" />
+               </BorderPane.margin>
+            </MenuBar>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

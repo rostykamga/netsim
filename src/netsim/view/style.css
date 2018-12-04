@@ -1,0 +1,59 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.label-result{
+    -fx-font-weight: bold; 
+    -fx-text-fill: gray;
+    -fx-font-size: 12;
+}
+
+.label-title{
+    -fx-font-weight: bold; 
+    -fx-font-size: 14;
+    -fx-text-fill: gray;
+    -fx-margin-left: 10px;
+    -fx-margin-top: 10px;
+    -fx-margin-bottom: 10px;
+}
+
+#workpane{
+    -fx-background-image: url("background.jpg");
+    -fx-opacity: 0.5;
+}
+
+
+.computer-label{
+    -fx-background-color: dodgerblue;
+    -fx-text-fill: whitesmoke;
+    -fx-text-alignment: center;
+    -fx-font-family: helvetica, verdana, "Arial Black";
+}
+
+.computer-selected{
+    -fx-background-color: 
+        #3c7fb1,
+        linear-gradient(#fafdfe, #e8f5fc),
+        linear-gradient(#eaf6fd 0%, #d9f0fc 49%, #bee6fd 50%, #a7d9f5 100%);
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+}
+
+
+.computer:hover{
+    /*-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );*/
+    /*-fx-background-color: linear-gradient(#2A5058, #61a2b1);*/
+    -fx-border-color: orange;
+    -fx-border-radius: 5px;
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-opacity: 0.8;
+}
+
+.chart-series-line {    
+    -fx-stroke-width: 1px;
+}
